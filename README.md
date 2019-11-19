@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##DrumMachine App
+
+A functional react app that simulates a drum machine with nine
+sounds. User can choose any sequence and play and/or record.
+
+This GitHub repository contains all the source code for this app
+
 ## Available Scripts
 
 In the project directory, you can run:
