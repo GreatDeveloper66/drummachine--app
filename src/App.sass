@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One')
+@import '../node_modules/react-rangeslider/lib/index.css'
+
+$bodycolor: #999999
+$appcolor: #C9C9C9
+$fontcolor: #000000
+$buttoncolor: #999999
+$shadowcolor: #000000
+$bordercolor: #CC5C5C
+$border: 4px solid $bordercolor
+$shadow: 3px 6px $shadowcolor
+$slidercolor: #d3d3d3
+$inputcolor: #FFFFFF
+$fontdefault: 'Russo One', sans-serif
+
+=position($display,$flexdirection,$justifycontent,$alignitems)
+	display: $display
+	flex-direction: $flexdirection
+	justify-content: $justifycontent
+	align-items: $alignitems
+
+=divsize($width,$height,$margin,$padding)
+	width: $width
+	height: $height
+	margin: $margin
+	padding: $padding
+
+=border($width, $type, $color)
+	border-width: $width
+	border-style: $type
+	border-color: $color
+
+=font($family,$size,$color)
+	font-family: $family
+	font-size: $size
+	color: $color
+
+body
+	+position(flex,row,center,center)
+	+divsize(100%, 100%,2px,2px)
+	overflow-x:hidden
+	background-color: $bodycolor
+	margin-top: 100px
+
+div.App
+	+position(flex, column, space-around, center)
+	+divsize(85vw,119vw,2px,2px)
+	+border(4px, solid, $bordercolor)
+	max-width: 500px
+	max-height: 700px
+	background-color: $appcolor
+	box-shadow: $shadow
+
+
+div.padsBoard
+	+position(flex, row, space-around, center)
+	+divsize(100%,55%,3px,3px)
+	flex-wrap: wrap
+
+div.controls
+	+position(flex, column,space-around, center)
+	+divsize(100%,45%,2px,2px)
+	flex-wrap: nowrap
+
+button
+	background-color: $buttoncolor
+	box-shadow: $shadow
+	margin: 3px
+	padding: 3px
+	border-radius: 10px
+
+button.drum-pad
+	+divsize(30%,30%,1px,1px)
+
+button.power, button.record, button.play
+	+divsize(25%,8%,1px,1px)
+
+button
+	:hover
+		cursor: pointer
+
+div.display
+	+position(flex, row, center, center)
+	+divsize(80%, 15%, 1px, 1px)
+	+border(2px, solid, #000000)
+	+font($fontdefault, 30px, $fontcolor)
+	box-shadow: $shadow
+	background-color: $inputcolor
+
+div.volumebar
+	+divsize(85%, 10%, 1px, 1px)
+	+border(2px, solid, #000000)
+	box-shadow: $shadow
+	background-color: $inputcolor
+
+button.power, button.record, button.play
+	+font($fontdefault, 15px, $fontcolor)
+
+button
+	p
+		+font($fontdefault, 20px, $fontcolor)
+
+@media only screen and (min-width: 1000px)
+	div.App
+		flex-direction: row
+		max-width: 1000px
+		max-height: 450px
+
+	div.padsBoard
+		width: 60%
+		height: 100%
+	div.controls
+		width: 40%
+		height: 100%

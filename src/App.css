@@ -1,22 +1,144 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+@import '../node_modules/react-rangeslider/lib/index.css';
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 2px;
+  padding: 2px;
+  background-color: #999999;
+  margin-top: 100px;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div.App {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 85vw;
+  height: 119vw;
+  margin: 2px;
+  padding: 2px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #CC5C5C;
+  max-width: 500px;
+  max-height: 700px;
+  background-color: #C9C9C9;
+  box-shadow: 3px 6px #000000;
 }
 
-.App-link {
-  color: #09d3ac;
+div.padsBoard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 55%;
+  margin: 3px;
+  padding: 3px;
+  flex-wrap: wrap;
+}
+
+div.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 45%;
+  margin: 2px;
+  padding: 2px;
+  flex-wrap: nowrap;
+}
+
+button {
+  background-color: #999999;
+  box-shadow: 3px 6px #000000;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+button.drum-pad {
+  width: 30%;
+  height: 30%;
+  margin: 1px;
+  padding: 1px;
+}
+
+button.power, button.record, button.play {
+  width: 25%;
+  height: 8%;
+  margin: 1px;
+  padding: 1px;
+}
+
+button :hover {
+  cursor: pointer;
+}
+
+div.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 15%;
+  margin: 1px;
+  padding: 1px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000000;
+  font-family: "Russo One", sans-serif;
+  font-size: 30px;
+  color: #000000;
+  box-shadow: 3px 6px #000000;
+  background-color: #FFFFFF;
+}
+
+div.volumebar {
+  width: 85%;
+  height: 10%;
+  margin: 1px;
+  padding: 1px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000000;
+  box-shadow: 3px 6px #000000;
+  background-color: #FFFFFF;
+}
+
+button.power, button.record, button.play {
+  font-family: "Russo One", sans-serif;
+  font-size: 15px;
+  color: #000000;
+}
+
+button p {
+  font-family: "Russo One", sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+
+@media only screen and (min-width: 1000px) {
+  div.App {
+    flex-direction: row;
+    max-width: 1000px;
+    max-height: 450px;
+  }
+
+  div.padsBoard {
+    width: 60%;
+    height: 100%;
+  }
+
+  div.controls {
+    width: 40%;
+    height: 100%;
+  }
 }
