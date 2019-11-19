@@ -34,7 +34,7 @@ class DrumPad extends Component {
 		super(props);
 		this.onKeyPress = this.onKeyPress.bind(this);
 	}
-	
+
 	componentDidMount()  {
 		document.addEventListener("keydown", this.onKeyPress);
 	}
@@ -48,12 +48,12 @@ onKeyPress(e) {
 		this.props.clickPad();
 	}
 }
-	
+
 	render(){
 		const letter = this.props.id;
 		const id = this.props.id + 'pad';
 		return(
-		<button class="drum-pad" id={id} onClick={this.props.clickPad} disabled={!this.props.disable}>
+		<button className="drum-pad" id={id} onClick={this.props.clickPad} disabled={!this.props.disable}>
 			<p>{letter}</p>
 		</button>
 			);
@@ -64,10 +64,10 @@ class PadsBoard extends Component {
 	constructor(props){
 		super(props);
 	}
-	
+
 	render(){
 		return(
-			<div class="padsBoard">
+			<div className="padsBoard">
 					<DrumPad id={data[0][0]} keyCode = {data[0][3]} clickPad={() => this.props.clickPad(0)} disable={this.props.disable} />
 					<DrumPad id={data[1][0]} keyCode = {data[1][3]} clickPad = {() => this.props.clickPad(1)} disable={this.props.disable}/>
 					<DrumPad id={data[2][0]} keyCode = {data[2][3]} clickPad = {() => this.props.clickPad(2)} disable={this.props.disable}/>
@@ -91,11 +91,11 @@ class AppCore extends Component {
 		this.powerClick = this.powerClick.bind(this);
 		this.playClick = this.playClick.bind(this);
 		this.updateVolume = this.updateVolume.bind(this);
-																																
+
 	}
-	
+
 	clickPad(i){
-		
+
 		const recording = this.state.recording;
 		let sound = new Howl({src: data[i][2],
 																								autoplay: true
@@ -110,9 +110,9 @@ class AppCore extends Component {
 					buttonPressed: i,
 					recordingSequence: newrecordingSequence
 				});
-		
+
 	}
-		
+
 	powerClick(){
 		this.setState({
 			power: !this.state.power,
@@ -121,7 +121,7 @@ class AppCore extends Component {
 			buttonPressed: -1
 		});
 	}
-	
+
 	recordClick(){
 		this.setState({
 			recording: true,
@@ -134,7 +134,7 @@ updateVolume(vol) {
 		volume: vol
 	});
 }
-	
+
 playClick() {
   const playSet = [...this.state.recordingSequence];
   const vol = this.state.volume;
@@ -152,32 +152,32 @@ playClick() {
       newSound.play();
     }, (i + 1) * 1000);
   }
-	
+
 }
-	
+
 	render(){
-		
+
 		const display = this.state.power ? "ON" : "OFF";
 
 	return(
 	<div>
-			<div class="App" id="drum-machine">
-		
+			<div className="App" id="drum-machine">
+
 					<PadsBoard clickPad={this.clickPad} disable={this.state.power}/>
-							<div class="controls">
-									<button type="button" value = {display} class="power" onClick={this.powerClick}>
+							<div className="controls">
+									<button type="button" value = {display} className="power" onClick={this.powerClick}>
 										{display}
 									</button>
-									<div class="display" id="display">
+									<div className="display" id="display">
 										{this.state.display}
 									</div>
-									
+
 											<VolumeSlider updateVol = {this.updateVolume} />
-									
-									<button type="button" class="record" onClick={this.recordClick} disabled={!this.state.power}>
+
+									<button type="button" className="record" onClick={this.recordClick} disabled={!this.state.power}>
 										REC
 									</button>
-									<button type="button" class="play" onClick={this.playClick} disabled={!this.state.power}>
+									<button type="button" className="play" onClick={this.playClick} disabled={!this.state.power}>
 										PLAY
 									</button>
 							</div>
@@ -192,13 +192,13 @@ class App extends Component {
 		constructor(props){
 			super(props);
 		}
-	
+
   render() {
     return (
 					<html>
 					<body>
       <AppCore />
-					
+
 					</body>
 					</html>
     );
@@ -213,7 +213,7 @@ class VolumeSlider extends Component {
 					volume: 5
 				}
 		}
-			
+
 	changeVolume = (volume) => {
 		this.setState({
 				volume: volume
@@ -222,7 +222,7 @@ class VolumeSlider extends Component {
 	}
   render() {
     return (
-					<div class="volumebar">
+					<div className="volumebar">
       <Slider
 								min={0}
 								max={10}
