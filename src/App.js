@@ -195,12 +195,7 @@ class App extends Component {
 
   render() {
     return (
-					<html>
-					<body>
       <AppCore />
-
-					</body>
-					</html>
     );
   }
 }
