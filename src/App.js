@@ -60,9 +60,7 @@ onKeyPress(e) {
 }
 
 class PadsBoard extends Component {
-	constructor(props){
-		super(props);
-	}
+
 
 	render(){
 		return(
@@ -188,9 +186,7 @@ playClick() {
 
 
 class App extends Component {
-		constructor(props){
-			super(props);
-		}
+		
 
   render() {
     return (
