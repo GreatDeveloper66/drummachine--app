@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
-@import '../node_modules/react-rangeslider/lib/index.css';
+@import url(../node_modules/react-rangeslider/lib/index.css);
 body {
   display: flex;
   flex-direction: row;
@@ -11,7 +11,6 @@ body {
   padding: 2px;
   background-color: #999999;
   margin-top: 100px;
-  overflow-x: hidden;
 }
 
 div.App {
@@ -78,8 +77,8 @@ button.power, button.record, button.play {
   padding: 1px;
 }
 
-button :hover {
-  cursor: pointer;
+button {
+  hover-cursor: pointer;
 }
 
 div.display {
@@ -121,7 +120,7 @@ button.power, button.record, button.play {
 
 button p {
   font-family: "Russo One", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: #000000;
 }
 
@@ -140,5 +139,9 @@ button p {
   div.controls {
     width: 40%;
     height: 100%;
+  }
+
+  button p {
+    font-size: 20px;
   }
 }
