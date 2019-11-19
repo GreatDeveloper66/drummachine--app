@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Slider from 'react-rangeslider';
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 
 	const data = [
 			["Q","Heater 1","https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3", 81],
